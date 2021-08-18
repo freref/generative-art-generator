@@ -1,0 +1,32 @@
+{
+    "description": "8,765 mutated twitter eggs living on the Ethereum blockchain. Each egg is unique and a composition of hundreds of attributes, your Default Egg's chance of being generated is one in 2.5 quadrillion",
+    "external_url": "www.defaulteggs.com",
+    "name": "Default Egg #1",
+    "attributes": [
+        {
+            "trait_type": "Backgrounds",
+            "value": "yellow_r"
+        },
+        {
+            "trait_type": "Skin",
+            "value": "pink"
+        },
+        {
+            "trait_type": "Clothing",
+            "value": "open black"
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "monochrome mask"
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "green ski mask goggles"
+        },
+        {
+            "trait_type": "Head",
+            "value": "pink yellow durag"
+        }
+    ],
+    "image": "ipfs://aazzzaaa/1.png"
+}
