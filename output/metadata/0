@@ -5,28 +5,28 @@
     "attributes": [
         {
             "trait_type": "Backgrounds",
-            "value": "green"
+            "value": "purple"
         },
         {
             "trait_type": "Skin",
-            "value": "light purple"
+            "value": "pink"
         },
         {
             "trait_type": "Clothing",
-            "value": "diving suit purple_r"
+            "value": "open black"
         },
         {
             "trait_type": "Mouth",
-            "value": "black drip mouth"
+            "value": "textured green mask_r"
         },
         {
             "trait_type": "Eyes",
-            "value": "green ski mask goggles"
+            "value": "angry"
         },
         {
             "trait_type": "Head",
-            "value": "blue mohawk"
+            "value": "green spiked hair"
         }
     ],
-    "image": "ipfs://aazzzaaa/0.png"
+    "image": "ipfs:///0.png"
 }

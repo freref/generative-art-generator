@@ -5,28 +5,28 @@
     "attributes": [
         {
             "trait_type": "Backgrounds",
-            "value": "yellow_r"
+            "value": "cherry pink_r"
         },
         {
             "trait_type": "Skin",
-            "value": "pink"
+            "value": "light purple"
         },
         {
             "trait_type": "Clothing",
-            "value": "open black"
+            "value": "contaminant yellow"
         },
         {
             "trait_type": "Mouth",
-            "value": "monochrome mask"
+            "value": "textured purple mask_r"
         },
         {
             "trait_type": "Eyes",
-            "value": "green ski mask goggles"
+            "value": "metallic goggles"
         },
         {
             "trait_type": "Head",
-            "value": "pink yellow durag"
+            "value": "green durag"
         }
     ],
-    "image": "ipfs://aazzzaaa/1.png"
+    "image": "ipfs:///1.png"
 }

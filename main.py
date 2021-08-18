@@ -7,12 +7,12 @@ import sys
 
 
 path = "/input/"
-dirname = os.path.dirname(__file__)
+dirname = os.path.dirname(os.path.abspath(__file__))
 #sorted from bottom to top
 sorted_layers = ["Backgrounds", "Skin", "Clothing", "Mouth", "Eyes", "Head"]
 #pre-condition these two arrays have the same length
 categories = ["/Legendary/", "/SuperRare/", "/Rare/", "/Standard/"] 
-chances = [0.01, 0.09, 0.2, 0.7] #chance of getting above category
+chances = [0.075, 0.125, 0.25, 0.55] #chance of getting above category
 real_chances = {}
 editions = sys.argv[1]
 
@@ -35,11 +35,11 @@ def generate_image(edition):
                 break
 
         folder = dirname + path + layer + rarity
-        file_name = random.choice(os.listdir(folder))
+        file_name = random.choice(list(set(os.listdir(folder)) - {".DS_Store"}))
         addative_image = Image.open(folder + file_name)
         generated_image.paste(addative_image, (0, 0), addative_image)
         addative_image.close()
-        
+
         attributes.append({"trait_type": layer,"value":file_name[0:-4]})
 
     generated_image.save("output/images/"+edition+".png")
