@@ -4,26 +4,35 @@ import os
 import random
 import sys
 
+#=======================================================
+# CHANGE THE FOLLOWING PARAMS TO YOUR NEED
+#=======================================================
+
+# Collection information:
+description = "Example description"
+url = "www.example_url.com"
+name = "Example Name"
+
+# Layer information:
+sorted_layers = ["Backgrounds", "Skin", "Clothing", "Mouth", "Eyes", "Head"]
+categories = ["/Legendary/", "/SuperRare/", "/Rare/", "/Standard/"] 
+chances = [0.075, 0.125, 0.25, 0.55] # odds of getting above category
+
+#=======================================================
 
 
+# Global variables:
 path = "/input/"
 dirname = os.path.dirname(os.path.abspath(__file__))
-#sorted from bottom to top
-sorted_layers = ["Backgrounds", "Skin", "Clothing", "Mouth", "Eyes", "Head"]
-#pre-condition these two arrays have the same length
-categories = ["/Legendary/", "/SuperRare/", "/Rare/", "/Standard/"] 
-chances = [0.075, 0.125, 0.25, 0.55] #chance of getting above category
 real_chances = {}
 editions = sys.argv[1]
-
-
 
 def generate_image(edition):
     generated_image = Image.open(dirname + path + "base.png")
     attributes = []
-    metadata = {"description": "8,765 mutated twitter eggs living on the Ethereum blockchain. Each egg is unique and a composition of hundreds of attributes, your Default Egg's chance of being generated is one in 2.5 quadrillion",
-                "external_url": "www.defaulteggs.com",
-                "name": "Default Egg #"+edition}
+    metadata = {"description": description,
+                "external_url": url,
+                "name": name+ "#" + edition}
 
     for layer in sorted_layers:
         rarity = ""
@@ -55,6 +64,8 @@ def generate_image(edition):
             
 #re-weighs the percentage to amt of files
 def calculateChances():
+    assert len(categories) == len(chances)
+
     new_chances = []
     for layer in sorted_layers:
         for index1, chance in enumerate(chances):
@@ -90,13 +101,18 @@ def updateCID(cid):
 
 
 #=======================================================
+        
+def main():
+    os.makedirs("output/metadata", exist_ok=True)
+    os.makedirs("output/images", exist_ok=True)
 
+    calculateChances()
 
-calculateChances()
+    for edition in range(int(editions)+1):
+        print("Creating edition: " + str(edition))
+        generate_image(str(edition))
 
-for edition in range(int(editions)+1):
-    print("Creating edition: " + str(edition))
-    generate_image(str(edition))
+    cid = input("Enter CID: ")
+    updateCID(cid)
 
-cid = input("Enter CID: ")
-updateCID(cid)
+main()
